@@ -1,0 +1,227 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<html>
+<head>
+     <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script language="javascript" type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+</head>
+<body>
+
+<div class="container-flued">
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+    <a class="navbar-brand" href="{% url 'index' %}">EventMakeEasy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            More facilities
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Birthday Party</a>
+            <a class="dropdown-item" href="#">Aniversery Celebrations</a>
+            <a class="dropdown-item" href="#">Wedding Decoration</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+   </nav>
+  <div id="content" class="container">
+
+      {% block content %}
+      {% endblock %}
+  </div>
+<!-- Footer -->
+  <footer class="page-footer font-small stylish-color-dark pt-4" style="background:black;">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
+
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase  mt-3 mb-4">EventMakeEasy</h5>
+          <p>Make Event Easy. Where there is love there is life.
+          “To be fully seen by somebody, then, and be loved anyhow–this is a human offering that can border on miraculous.” </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Farewell party</a>
+            </li>
+            <li>
+              <a href="#!">Welcome party</a>
+            </li>
+            <li>
+              <a href="#!">New Year's Day</a>
+            </li>
+            <li>
+              <a href="#!">14th Feb</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Services</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Wedding Aniversery</a>
+            </li>
+            <li>
+              <a href="#!">Birthday Celebration</a>
+            </li>
+            <li>
+              <a href="#!">Kitty Party</a>
+            </li>
+            <li>
+              <a href="#!">Surprise party</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Like More</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Garden party</a>
+            </li>
+            <li>
+              <a href="#!">Cocktail party</a>
+            </li>
+            <li>
+              <a href="#!">Singles dance party</a>
+            </li>
+            <li>
+              <a href="#!">Graduation party</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <hr>
+
+    <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1">Register for free</h5>
+      </li>
+      <li class="list-inline-item">
+        <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+      </li>
+    </ul>
+    <!-- Call to action -->
+
+    <hr>
+
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-1">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    <!-- Social buttons -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href=""> EventMakeEasy.com </a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+</div>
+
+{% block script %}
+<script>
+
+
+</script>
+
+{% endblock %}
+
+</body>
+</html>

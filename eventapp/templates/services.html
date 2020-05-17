@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container" style="width:100%;padding:5px;margin:5px;">
+    <div class="row">
+    {% for s in service %}
+
+        <div class="col">
+{{ form|crispy }}
+
+<form action="{% url 'details_page' %}" method="get">
+
+{% csrf_token %}
+    <input type=hidden name="name" id="name"  value="{{ s.name }}" size=10>
+    <input type=hidden name="id" id="id" value="{{ s.id }}" size=10>
+    <div class="d-inline-block service details fg" style="background:white;;border:1px black;padding:0px;margin:3px;box-shadow:5px 5px 8px grey;width:300px">
+
+
+    <div class="card" style="width: 300px;height:400px;padding:15px;margin:0px;background-image:url('/media/{{ s.cover_image }}');background-size:cover; float:right;display:inline;">
+
+  <div class="card-body">
+
+    <h5 class="card-title" namr="name" style="background: yellow;position:relative;left:-30px;">{{ s.name }}</h5>
+    <p class="card-text" style="position:relative;top:200px;color:white;">{{ s.discription }}</p>
+   <span class="divpr" id="divpr{{ s.id }}">
+    <button class="btn btn-primary" onClick="click()" style="position:relative;top:220px;left:90px;">More Details >></button></span>
+  </div>
+</div>
+</div>
+
+
+
+
+</form>
+        </div>
+    {% endfor %}
+</div>
+    </div>
+{% endblock %}
+
+{% block script %}
+<script>
+    b=document.getElementById('id').value
+    c = document.getElementById('name').value
+
+    var service = {
+        id : b,
+        name  :c
+    }
+    idstr_ser = JSON.stringify(service)
+    localStorege.setItem('service',idstr_ser)
+    console.log(service)
+    if(localStorege.getItem('service') != null){
+        service={};
+    }
+    else{
+        service=JSON.parse(localStorege(service));
+
+    }
+    $('.divpr').onClick('click','button.service',function(){
+        let idstr = this.id.toString();
+        if (service[idstr]!=undefined){
+            id=id;
+        }
+        else{
+            id=1;
+            name=document.getElementById('name'+idstr).innerHTML;
+            service[idstr]=[id,name];
+
+        }
+    });
+        
+function update(service){
+   pass
+}
+   
+</script>
+
+{% endblock %}

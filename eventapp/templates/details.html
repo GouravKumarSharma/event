@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<span id="service"></span>
+
+{% endblock %}
+{% block script %}
+<script>
+
+if (JSON.parse(localStorage.getItem('service')) == null){
+	
+	console.log('no')
+	var service={}
+}
+	else {
+		service = JSON.parse(localStorage.getItem('service'));
+		//document.getElementById('service').innerHTML = Object.values(service);
+		for(var p in service){
+			console.log(service[p].id)
+		}
+
+		console.log('yes')
+	}
+
+ </script>
+
+
+
+{% endblock %}
